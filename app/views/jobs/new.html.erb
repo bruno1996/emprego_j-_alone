@@ -1,0 +1,19 @@
+<%= form_for @job do |f| %>
+
+  <%= f.label :title, 'Título' %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description, 'Descrição' %>
+  <%= f.text_field :description %>
+
+  <%= f.label :company_name, 'Nome da empresa' %>
+  <%= f.text_field :company_name %>
+
+  <%= f.label :job_category, 'Categoria da vaga' %>
+  <%= f.text_field :job_category %>
+
+  <%= f.label :location, 'Local' %>
+  <%= f.text_field :location %>
+
+  <%= f.submit "Salvar vaga" %>
+<% end %>
