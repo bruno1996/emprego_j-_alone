@@ -12,6 +12,11 @@ class JobsController < ApplicationController
     job_params = params.require(:job).permit(:title,:description,:company_name,
                                              :job_category,:location)
     @job = Job.new(job_params)
-    redirect_to root_path
+    if @job.save
+      redirect_to root_path
+    else
+      flash[:error] = 'Preéncha os campos obrigatórios'
+      render :new
+    end
   end
 end
