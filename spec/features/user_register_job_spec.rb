@@ -22,10 +22,8 @@ require 'rails_helper'
       click_on 'Salvar vaga'
 
       expect(page).to have_css('h2', text: job.title)
-      expect(page).to have_content(job.description)
-      expect(page).to have_content(job.company_name)
-      expect(page).to have_content(job.job_category)
       expect(page).to have_content(job.location)
+      expect(page).to have_content(job.company_name)
     end
     scenario 'field validation' do
 
@@ -34,5 +32,7 @@ require 'rails_helper'
       click_on 'Salvar vaga'
 
       expect(page).to have_text('Preéncha os campos obrigatórios')
+      expect(page).to have_text('*Campo obrigatório')
+
     end
   end

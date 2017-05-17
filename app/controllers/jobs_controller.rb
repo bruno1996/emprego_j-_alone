@@ -16,6 +16,7 @@ class JobsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = 'Preéncha os campos obrigatórios'
+      flash[:errors] = '*Campo obrigatório'
       render :new
     end
   end

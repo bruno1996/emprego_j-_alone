@@ -2,13 +2,12 @@
 <p>Encontre seu emprego aqui</p>
 
 <%= link_to 'Cadastrar Vaga', new_job_path %>
-
+<dl>
 <% @jobs.each do |job| %>
 
-<h2><%= job.title %></h2>
-<%= job.description %>
-<%= job.company_name %>
-<%= job.job_category %>
-<%= job.location %>
+<dt><h2><%= job.title %></h2><dt/>
+<dt><%= job.location %><dt/>
+<dt><%= job.company_name %><dt/>
 
 <% end %>
+<dl/>
