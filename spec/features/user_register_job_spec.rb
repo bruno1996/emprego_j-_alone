@@ -33,6 +33,10 @@ require 'rails_helper'
 
       expect(page).to have_text('Preéncha os campos obrigatórios')
       expect(page).to have_text('*Campo obrigatório')
+      expect(page).to have_text('*Campo obrigatório')
+      expect(page).to have_text('*Campo obrigatório')
+      expect(page).to have_text('*Campo obrigatório')
+      expect(page).to have_text('*Campo obrigatório')
 
     end
   end

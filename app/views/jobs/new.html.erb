@@ -1,22 +1,17 @@
 <%= flash[:error] %>
 <dl>
-<%= form_for @job do |f| %>
+<%= simple_form_for @job do |f| %>
 
-<dt> <%= f.label :title, 'Título' %> <dt/>
-<dd>  <%= f.text_field :title %> <%= flash[:errors] %> <dd/>
+<dt> <%= f.input :title, label: 'Título', error: '*Campo obrigatório' %> <dt/>
 
-<dt>  <%= f.label :description, 'Descrição' %> <dt/>
-<dd>  <%= f.text_field :description %> <%= flash[:errors] %> <dd/>
+<dt>  <%= f.input :description, label: 'Descrição', error: '*Campo obrigatório' %> <dt/>
 
-<dt>  <%= f.label :company_name, 'Nome da empresa' %> <dt/>
-<dd>  <%= f.text_field :company_name %> <%= flash[:errors] %> <dd/>
+<dt>  <%= f.input :company_name, label: 'Nome da empresa', error: '*Campo obrigatório' %> <dt/>
 
-<dt>  <%= f.label :job_category, 'Categoria da vaga' %> <dt/>
-<dd>  <%= f.text_field :job_category %> <%= flash[:errors] %> <dd/>
+<dt>  <%= f.input :job_category, label: 'Categoria da vaga', error: '*Campo obrigatório' %> <dt/>
 
-<dt>  <%= f.label :location, 'Local' %> <dt/>
-<dd>  <%= f.text_field :location %> <%= flash[:errors] %> <dd/>
+<dt>  <%= f.input :location, label: 'Local', error: '*Campo obrigatóriio' %> <dt/>
 
-  <%= f.submit "Salvar vaga" %>
+<dt>  <%= f.submit "Salvar vaga" %> <dt/>
 <% end %>
 <dl/>
