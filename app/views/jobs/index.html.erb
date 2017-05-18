@@ -5,7 +5,7 @@
 <dl>
 <% @jobs.each do |job| %>
 
-<dt><h2><%= job.title %></h2><dt/>
+<dt><h2><%= link_to job.title, job_path(job) %></h2><dt/>
 <dt><%= job.location %><dt/>
 <dt><%= job.company_name %><dt/>
 
