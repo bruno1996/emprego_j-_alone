@@ -3,11 +3,7 @@ require 'rails_helper'
   feature 'user register job' do
     scenario 'successfully' do
 
-      job = Job.new(title:'Desenvolvedor',
-                    description:'Programar em ruby',
-                    company_name:'Google',
-                    job_category:'Seniôr',
-                    location:'São Paulo')
+      job = create(:job)
 
       visit root_path
 
