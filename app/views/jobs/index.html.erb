@@ -6,8 +6,12 @@
 <% @jobs.each do |job| %>
 
 <dt><h2><%= link_to job.title, job_path(job) %></h2><dt/>
-<dt><%= job.location %><dt/>
-<dt><%= job.company_name %><dt/>
+<% if job.featured == true %>
+    <dt><h3>Destaque<h3/><dt/>
+<% end %>
+  <br>
+  <dd><%= job.company_name %><dt/>
+  <dd><%= job.location %><dt/>
 
 <% end %>
 <dl/>

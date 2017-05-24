@@ -1,5 +1,11 @@
-<h2><%= @job.title %><h2/>
-<%= @job.description %>
-<%= @job.company_name %>
-<%= @job.job_category %>
-<%= @job.location %>
+<dl>
+<dt><h2><%= @job.title %><h2/><dt/>
+<% if @job.featured? %>
+  <strong>Destaque<strong/>
+<% end %>
+
+<dd><%= @job.description %><dd/>
+<dd><%= @job.company_name %><dd/>
+<dd><%= @job.job_category %><dd/>
+<dd><%= @job.location %><dd/>
+<dl/>
