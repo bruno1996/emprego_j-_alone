@@ -1,0 +1,18 @@
+<dl>
+<%= simple_form_for @job do |f| %>
+
+<dt> <%= f.input :title, label: 'Título', error: '*Campo obrigatório' %> <dt/>
+
+<dt>  <%= f.input :description, label: 'Descrição', error: '*Campo obrigatório' %> <dt/>
+
+<dt>  <%= f.input :company_name, label: 'Nome da empresa', error: '*Campo obrigatório' %> <dt/>
+
+<dt>  <%= f.input :job_category, label: 'Categoria da vaga', error: '*Campo obrigatório' %> <dt/>
+
+<dt>  <%= f.input :location, label: 'Local', error: '*Campo obrigatóriio' %> <dt/>
+
+<dt>  <%= f.input :featured, label: 'Destaque' %> <dt/>
+
+<dt>  <%= f.submit "#{action} Salvar vaga" %> <dt/>
+<% end %>
+<dl/>
