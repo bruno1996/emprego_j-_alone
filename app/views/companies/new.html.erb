@@ -1,0 +1,15 @@
+<%= flash[:error] %>
+<dl>
+<%= simple_form_for @company do |f| %>
+
+  <dt><%= f.input :company_name, label: 'Nome da Empresa', error: '*Campo obrigatório' %></dt>
+
+  <dt><%= f.input :location, label: 'Local', error: '*Campo obrigatório' %></dt>
+
+  <dt><%= f.input :email, label: 'Email de contato', error: '*Campo obrigatório' %></dt>
+
+  <dt><%= f.input :phone, label: 'Telefone de contato', error: '*Campo obrigatório' %></dt>
+
+  <%= f.submit 'Salvar empresa' %>
+<% end %>
+</dl>

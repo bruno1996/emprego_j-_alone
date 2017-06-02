@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'jobs#index'
 
   resources :jobs, only:[:new,:create,:show,:edit,:update]
+  resources :companies, only:[:new,:create,:show]
 
 end
