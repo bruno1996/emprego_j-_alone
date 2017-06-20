@@ -5,7 +5,7 @@
 
 <dt>  <%= f.input :description, label: 'Descrição', error: '*Campo obrigatório' %> <dt/>
 
-<dt>  <%= f.input :company_name, label: 'Nome da empresa', error: '*Campo obrigatório' %> <dt/>
+<dt>  <%= f.association :company,label_method: :company_name,value_method: :id, label: 'Empresa', error: '*Campo obrigatório' %> <dt/>
 
 <dt>  <%= f.input :job_category, label: 'Categoria da vaga', error: '*Campo obrigatório' %> <dt/>
 

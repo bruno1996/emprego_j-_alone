@@ -12,7 +12,7 @@ require 'rails_helper'
       click_on 'Cadastrar Empresa'
 
       fill_in 'Nome da Empresa',    with: company.company_name
-      fill_in 'Local',        with: company.location
+      fill_in 'Local',              with: company.location
       fill_in 'Email de contato',   with: company.email
       fill_in 'Telefone de contato',with: company.phone
 

@@ -13,7 +13,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    job_params = params.require(:job).permit(:title,:description,:company_name,
+    job_params = params.require(:job).permit(:title,:description,:company_id,
                                              :job_category,:location,:featured)
     @job = Job.new(job_params)
     if @job.save
@@ -30,7 +30,7 @@ class JobsController < ApplicationController
   end
 
   def update
-    job_params = params.require(:job).permit(:title,:description,:company_name,
+    job_params = params.require(:job).permit(:title,:description,:company_id,
                                              :job_category,:location,:featured)
     @job = Job.find(params[:id])
       if @job.update(job_params)

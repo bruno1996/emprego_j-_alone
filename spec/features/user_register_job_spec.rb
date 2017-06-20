@@ -2,7 +2,7 @@ require 'rails_helper'
 
   feature 'user register job' do
     scenario 'successfully' do
-
+      company = create(:company, company_name:'Hp')
       job = create(:job)
 
       visit root_path
@@ -11,7 +11,7 @@ require 'rails_helper'
 
       fill_in 'Título',             with: job.title
       fill_in 'Descrição',          with: job.description
-      fill_in 'Nome da empresa',    with: job.company_name
+      select company.company_name,  from: 'Empresa'
       fill_in 'Categoria da vaga',  with: job.job_category
       fill_in 'Local',              with: job.location
 
@@ -19,7 +19,7 @@ require 'rails_helper'
 
       expect(page).to have_css('h2', text: job.title)
       expect(page).to have_content(job.location)
-      expect(page).to have_content(job.company_name)
+      expect(page).to have_content(company.company_name)
     end
     scenario 'field validation' do
 

@@ -2,8 +2,9 @@ require 'rails_helper'
 
   feature 'user update job' do
     scenario 'successfully' do
-
-      job = create(:job)
+      company1 = create(:company, company_name:'Hp')
+      company2 = create(:company, company_name:'DELL')
+      job = create(:job, company:company1)
 
       visit root_path
 
@@ -13,7 +14,7 @@ require 'rails_helper'
 
       fill_in 'Título',             with: job.title
       fill_in 'Descrição',          with: job.description
-      fill_in 'Nome da empresa',    with: job.company_name
+      select company2.company_name,  from: 'Empresa'
       fill_in 'Categoria da vaga',  with: 'Sénior'
       fill_in 'Local',              with: job.location
 
@@ -21,12 +22,12 @@ require 'rails_helper'
 
       expect(page).to have_css('h2', text:job.title)
       expect(page).to have_content(job.description)
-      expect(page).to have_content(job.company_name)
+      expect(page).to have_content(company2.company_name)
       expect(page).to have_content('Sénior')
       expect(page).to have_content(job.location)
     end
     scenario 'valid of field of update' do
-
+      company = create(:company, company_name:'Hp')
       job = create(:job)
 
       visit root_path
@@ -37,7 +38,7 @@ require 'rails_helper'
 
       fill_in 'Título',             with: job.title
       fill_in 'Descrição',          with: job.description
-      fill_in 'Nome da empresa',    with: job.company_name
+      select company.company_name,  from: 'Empresa'
       fill_in 'Categoria da vaga',  with: ''
       fill_in 'Local',              with: job.location
 
