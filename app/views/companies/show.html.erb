@@ -1,0 +1,10 @@
+<h2><%= "Vagas para #{@company.company_name}" %><h2/>
+
+<% @company.job.each do |job| %>
+  <%= link_to job.title, job_path(job) %>
+  <%= job.location %>
+<% end %>
+
+<% if @company.job.empty? %>
+  <h2><%= "Sem Vagas" %><h2/>
+<% end %>

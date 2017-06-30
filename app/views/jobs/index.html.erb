@@ -5,15 +5,19 @@
 <%= link_to 'Cadastrar Empresa', new_company_path %>
 
 <dl>
-<% @jobs.each do |job| %>
+  <% @jobs.each do |job| %>
+    <dt><h2><%= link_to job.title, job_path(job) %></h2><dt/>
+    <% if job.featured == true %>
+      <dt><h3>Destaque<h3/><dt/>
+    <% end %>
+    <br>
+    <dd><%= job.company.company_name %><dd/>
+    <dd><%= job.location %><dd/>
+  <% end %>
+<dl/>
 
-<dt><h2><%= link_to job.title, job_path(job) %></h2><dt/>
-<% if job.featured == true %>
-    <dt><h3>Destaque<h3/><dt/>
-<% end %>
-  <br>
-  <dd><%= job.company.company_name %><dd/>
-  <dd><%= job.location %><dd/>
-
-<% end %>
+<dl>
+    <% @companies.each do |company| %>
+      <h3><dt><%= link_to company.company_name , company_path(company) %><dt/><h3/>
+    <% end %>
 <dl/>
